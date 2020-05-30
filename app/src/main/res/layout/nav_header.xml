@@ -6,19 +6,17 @@
     android:layout_gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/header">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_name"
         android:paddingTop="8dp"
         android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textViewEmail"
-        android:text="@string/user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:textSize="8dp"
