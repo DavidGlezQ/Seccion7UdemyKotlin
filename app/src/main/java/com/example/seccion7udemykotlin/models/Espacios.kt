@@ -1,3 +1,3 @@
 package com.example.seccion7udemykotlin.models
 
-data class Flight(val id: Int, val city: String, val imgResource: Int)
+data class Espacios(val id: Int, val name: String, val imgResource: Int)

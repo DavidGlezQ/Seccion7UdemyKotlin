@@ -6,13 +6,13 @@
             android:id="@+id/nav_home"
             android:title="Home"/>
         <item
-            android:icon="@drawable/ic_departure"
+            android:icon="@drawable/gallery"
             android:id="@+id/nav_departures"
-            android:title="Departures"/>
+            android:title="Gallery"/>
         <item
-            android:icon="@drawable/ic_arrival"
+            android:icon="@drawable/ic_other"
             android:id="@+id/nav_arrivals"
-            android:title="Arrivals"/>
+            android:title="Other"/>
     </group>
 
     <item android:title="Other">

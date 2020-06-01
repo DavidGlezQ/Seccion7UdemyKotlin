@@ -46,7 +46,7 @@
             android:layout_marginTop="200dp"
             android:background="?android:attr/selectableItemBackgroundBorderless"
             android:foreground="?android:attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_delete"/>
+            card_view:srcCompat="@drawable/ic_delete"/>
     </FrameLayout>
 
 </androidx.cardview.widget.CardView>

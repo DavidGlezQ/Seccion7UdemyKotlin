@@ -1,8 +1,8 @@
 package com.example.seccion7udemykotlin.listener
 
-import com.example.seccion7udemykotlin.models.Flight
+import com.example.seccion7udemykotlin.models.Espacios
 
 interface RecyclerFlightListener {
-    fun onClick(flight: Flight, position: Int)
-    fun onDelete(flight: Flight, position: Int)
+    fun onClick(flight: Espacios, position: Int)
+    fun onDelete(flight: Espacios, position: Int)
 }

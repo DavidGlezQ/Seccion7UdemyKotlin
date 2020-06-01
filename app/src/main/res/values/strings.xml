@@ -6,11 +6,8 @@
     <string name="close_drawer">Navigation Drawer is close</string>
     <string name="home_fragment_title">Home</string>
     <string name="home_fragment_hello">Hello from Home</string>
-    <string name="arrivals_fragment_title">Arrivals</string>
-    <string name="arrivals_fragment_hello">Hello from Arrivals</string>
-    <string name="departures_fragment_title">Departures</string>
+    <string name="other_fragment_title">Other</string>
+    <string name="other_fragment_hello">Hello from Other</string>
+    <string name="departures_fragment_title">Gallery</string>
     <string name="departures_fragment_hello">Hello from Departures</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
