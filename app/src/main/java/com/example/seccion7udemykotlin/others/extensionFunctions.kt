@@ -16,9 +16,9 @@ fun Activity.toast(resourceId: Int, duration: Int = Toast.LENGTH_SHORT) = Toast.
 fun ViewGroup.inflate(layoutId: Int) = LayoutInflater.from(context).inflate(layoutId, this, false)!!
 
 //Load By URL
-fun ImageView.loadByURL(url: String) = Picasso.with(context).load(url).into(this)
+fun ImageView.loadByURL(url: String) = Picasso.get().load(url).into(this)
 
-fun ImageView.loadByResource(resource: Int) = Picasso.with(context).load(resource).fit().into(this)
+fun ImageView.loadByResource(resource: Int) = Picasso.get().load(resource).fit().into(this)
 
 //Go to Activity
 inline fun <reified T : Activity>Activity.goToActivity(noinline init: Intent.() -> Unit = {}){
