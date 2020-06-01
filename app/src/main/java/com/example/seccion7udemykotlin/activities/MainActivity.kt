@@ -25,10 +25,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(findViewById(R.id.toolbar))
         setNavDrawer()
         setUserHeaderInformation()
-        if(savedInstanceState == null) {
-            fragmentsTrasnsactions(HomeFragment())
+        if (savedInstanceState == null) {
+            fragmentsTransactions(HomeFragment())
             navView.menu.getItem(0).isChecked = true
         }
+    }
+    
+
+    //Usuario y email en el banner
+    private fun setUserHeaderInformation() {
+        val name = navView.getHeaderView(0).findViewById<TextView>(R.id.textViewName)
+        val email = navView.getHeaderView(0).findViewById<TextView>(R.id.textViewEmail)
+
+        name?.let { name.text = getString(R.string.user_name) }
+        email?.let { email.text = getString(R.string.user_email) }
     }
 
     //Metodo para agreagr el icono y nos poermite abrir y cerrar el menu lateral.
@@ -40,49 +50,41 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navView.setNavigationItemSelectedListener(this)
     }
 
-    //Cambio entre fragments.
-    private fun fragmentsTrasnsactions(fragment: Fragment){
+    //Toast en las ultimas opciones.
+    private fun showMessageNavItemSelectedById(id: Int) {
+        when (id) {
+            R.id.nav_profile -> toast("Profile")
+            R.id.nav_settings -> toast("Settings")
+        }
+    }
+
+
+
+    //Fragments cambio
+    private fun fragmentsTransactions(fragment: Fragment){
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
     }
 
-    //Funcion para hacer el cambio de los fragments.
-    private fun loadFragmentById(id: Int){
-        when (id){
-            R.id.nav_home -> fragmentsTrasnsactions(HomeFragment())
-            R.id.nav_arrivals -> fragmentsTrasnsactions(ArrivalsFragment())
-            R.id.nav_departures -> fragmentsTrasnsactions(DeparturesFragment())
+
+    private fun loadFragmentById(id: Int) {
+        when (id) {
+            R.id.nav_home -> fragmentsTransactions(HomeFragment())
+            R.id.nav_departures -> fragmentsTransactions(DeparturesFragment())
+            R.id.nav_arrivals -> fragmentsTransactions(ArrivalsFragment())
         }
-    }
-
-    //Funcion para mostrar los mensajes (toast con KAT), de las dos ultimas opciones.
-    private fun showMessageNavItemSelectedById(id: Int){
-        when (id){
-            R.id.nav_profile -> toast("profile")
-            R.id.nav_settings -> toast("Settings")
-        }
-    }
-
-    //Funcion para mostrar el usuario y el email del usuario.
-    private fun setUserHeaderInformation(){
-        val name = navView.getHeaderView(0).findViewById<TextView>(R.id.textViewName)
-        val email = navView.getHeaderView(0).findViewById<TextView>(R.id.textViewEmail)
-
-        name?.let { name.text = getString(R.string.user_name) }
-        email?.let { email.text = getString(R.string.user_email) }
     }
 
     //Interfaz que nos permite controlar las opciones de nuestro menu.
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         showMessageNavItemSelectedById(item.itemId)
         loadFragmentById(item.itemId)
-        DrawerLayout.closeDrawer(GravityCompat.START) //Con esta linea hacemos que cada que seleccionemos una opcion se cierre el menu.
+        DrawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    //Funcion para que al presionar el boton de back estando el NavigationView abierto solo cierre esa vista y no la app.
-    override fun onBackPressed(){
+    override fun onBackPressed() {
         if (DrawerLayout.isDrawerOpen(GravityCompat.START)) {
             DrawerLayout.closeDrawer(GravityCompat.START)
         } else {
