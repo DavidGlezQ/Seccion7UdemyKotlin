@@ -10,8 +10,9 @@ import com.example.seccion7udemykotlin.R
 class DeparturesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val rootView = inflater.inflate(R.layout.fragment_departures, container, false)
 
-        return inflater.inflate(R.layout.fragment_departures, container, false)
+        return rootView
     }
 
 }

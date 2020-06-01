@@ -25,12 +25,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(findViewById(R.id.toolbar))
         setNavDrawer()
         setUserHeaderInformation()
+        //Controlar el cambio de lso fragments al cambiar la orientacion de la app
         if (savedInstanceState == null) {
             fragmentsTransactions(HomeFragment())
             navView.menu.getItem(0).isChecked = true
         }
     }
-    
+
 
     //Usuario y email en el banner
     private fun setUserHeaderInformation() {
@@ -58,16 +59,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-
-
-    //Fragments cambio
+    //Cmabio entre los fragments
     private fun fragmentsTransactions(fragment: Fragment){
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
     }
 
-
+    //Este metodo carga los items a sus respectivos fragments.
     private fun loadFragmentById(id: Int) {
         when (id) {
             R.id.nav_home -> fragmentsTransactions(HomeFragment())
@@ -84,6 +83,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
+    //Este metodo lo que hace es que si esta abierto el menu y se preciona el boton back solo se cierre el menu y no la app.
     override fun onBackPressed() {
         if (DrawerLayout.isDrawerOpen(GravityCompat.START)) {
             DrawerLayout.closeDrawer(GravityCompat.START)

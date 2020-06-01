@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="230dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="15dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="4dp"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="4dp">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <ImageView
             android:id="@+id/imageViewBg"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <View
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:background="#3000"/>
 
         <TextView
-            android:id="@+id/textViewSpaceName"
+            android:id="@+id/textViewCityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -38,14 +38,14 @@
             android:textStyle="bold"/>
 
         <ImageButton
-            android:id="@+id/bottomDelete"
+            android:id="@+id/buttonDelete"
             android:layout_width="26dp"
             android:layout_height="26dp"
             android:layout_gravity="end"
             android:layout_marginEnd="5dp"
             android:layout_marginTop="200dp"
-            android:background="?attr/selectableItemBackgroundBorderless"/>
-            <!--app:srcCompat="@drawable/ic_delete"-->
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_delete"/>
     </FrameLayout>
 
 </androidx.cardview.widget.CardView>
