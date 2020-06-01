@@ -38,10 +38,14 @@ dependencies {
 
     implementation "com.android.support:design:$kotlin_version"
 <<<<<<< HEAD
+<<<<<<< HEAD
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     implementation 'com.android.support:cardview-v7:29.0.0'
     implementation 'com.android.support:recyclerview-v7:29.0.0'
+=======
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+>>>>>>> parent of 5ac8bd8... update 31/05/2020 error
 =======
     implementation 'com.squareup.picasso:picasso:2.5.2'
 >>>>>>> parent of 5ac8bd8... update 31/05/2020 error
