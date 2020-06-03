@@ -24,6 +24,7 @@ class DeparturesFragment : Fragment() {
     private val layoutManager by lazy { LinearLayoutManager(context) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activity?.setTitle(R.string.departures_fragment_title)
         val rootView = inflater.inflate(R.layout.fragment_departures, container, false)
         recycler = rootView.recyclerView as RecyclerView
         setRecyclerView()

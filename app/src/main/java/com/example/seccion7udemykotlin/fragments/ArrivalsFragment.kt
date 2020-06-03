@@ -8,16 +8,10 @@ import android.view.ViewGroup
 
 import com.example.seccion7udemykotlin.R
 
-/**
- * A simple [Fragment] subclass.
- */
 class ArrivalsFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        activity?.setTitle(R.string.other_fragment_title)
         return inflater.inflate(R.layout.fragment_arrivals, container, false)
     }
 
